@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blue Gradient Navigation</title>
+  <style>
+    /* Reset and base styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f8ff;
+    }
+
+    /* Fixed Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: linear-gradient(90deg, #2193b0, #6dd5ed);
+      padding: 15px 0;
+      z-index: 999;
+      transition: background 0.3s ease, color 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .navbar.scrolled {
+      background: #1b2c3f;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      background: white;
+      color: #1b2c3f;
+    }
+
+    /* Decorative Gradient Shapes */
+    .decorations {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      margin-top: 120px;
+    }
+
+    .square, .circle {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #2193b0, #6dd5ed);
+    }
+
+    .square {
+      border-radius: 8px;
+    }
+
+    .circle {
+      border-radius: 50%;
+    }
+
+    /* Page Content */
+    .content {
+      margin-top: 40px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .content h1 {
+      color: #2193b0;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Menu -->
+  <nav class="navbar" id="navbar">
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Decorative Gradient Shapes -->
+  <div class="decorations">
+    <div class="square"></div>
+    <div class="circle"></div>
+    <div class="square"></div>
+    <div class="circle"></div>
+    <div class="square"></div>
+  </div>
+
+  <!-- Page Content -->
+  <div class="content">
+    <h1>Scroll Down</h1>
+    <p>Example content to demonstrate scroll-triggered navbar style changes.</p>
+    <div style="height: 1500px;"></div>
+  </div>
+
+  <!-- JavaScript for scroll interaction -->
+  <script>
+    window.addEventListener("scroll", function () {
+      const navbar = document.getElementById("navbar");
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
+</body>
+</html>
